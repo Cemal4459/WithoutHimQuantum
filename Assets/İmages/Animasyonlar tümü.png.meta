@@ -1,0 +1,977 @@
+fileFormatVersion: 2
+guid: 2be8604b549c7b045b2366c625939e1c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4851641738400623375
+    second: "Animasyonlar tu\u0308mu\u0308_0"
+  - first:
+      213: -3094765844872736340
+    second: "Animasyonlar tu\u0308mu\u0308_1"
+  - first:
+      213: -6201487867742842411
+    second: "Animasyonlar tu\u0308mu\u0308_2"
+  - first:
+      213: -1868936483560526040
+    second: "Animasyonlar tu\u0308mu\u0308_3"
+  - first:
+      213: 8803572216598696369
+    second: "Animasyonlar tu\u0308mu\u0308_4"
+  - first:
+      213: -4665449044939183995
+    second: "Animasyonlar tu\u0308mu\u0308_5"
+  - first:
+      213: -8658000990607563578
+    second: "Animasyonlar tu\u0308mu\u0308_6"
+  - first:
+      213: 586140750406061105
+    second: "Animasyonlar tu\u0308mu\u0308_7"
+  - first:
+      213: -6871267298296180824
+    second: "Animasyonlar tu\u0308mu\u0308_8"
+  - first:
+      213: 6496869743041311151
+    second: "Animasyonlar tu\u0308mu\u0308_9"
+  - first:
+      213: 1665027398157583005
+    second: "Animasyonlar tu\u0308mu\u0308_10"
+  - first:
+      213: -6652158727062722801
+    second: "Animasyonlar tu\u0308mu\u0308_11"
+  - first:
+      213: -7996621651965686215
+    second: "Animasyonlar tu\u0308mu\u0308_12"
+  - first:
+      213: -4830891753615139845
+    second: "Animasyonlar tu\u0308mu\u0308_13"
+  - first:
+      213: 7665404906674041352
+    second: "Animasyonlar tu\u0308mu\u0308_14"
+  - first:
+      213: 1472107495429146373
+    second: "Animasyonlar tu\u0308mu\u0308_15"
+  - first:
+      213: -6683506182163555334
+    second: "Animasyonlar tu\u0308mu\u0308_16"
+  - first:
+      213: -3500996889853706911
+    second: "Animasyonlar tu\u0308mu\u0308_17"
+  - first:
+      213: 5882726824781971356
+    second: "Animasyonlar tu\u0308mu\u0308_18"
+  - first:
+      213: 1876344173079002336
+    second: "Animasyonlar tu\u0308mu\u0308_19"
+  - first:
+      213: 2646107489622806988
+    second: "Animasyonlar tu\u0308mu\u0308_20"
+  - first:
+      213: -520366711831838924
+    second: "Animasyonlar tu\u0308mu\u0308_21"
+  - first:
+      213: -8770435256994306974
+    second: "Animasyonlar tu\u0308mu\u0308_22"
+  - first:
+      213: 7130816492875026737
+    second: "Animasyonlar tu\u0308mu\u0308_23"
+  - first:
+      213: -2813118978850540214
+    second: "Animasyonlar tu\u0308mu\u0308_24"
+  - first:
+      213: -1769963413516486305
+    second: "Animasyonlar tu\u0308mu\u0308_25"
+  - first:
+      213: 7281263918386000776
+    second: "Animasyonlar tu\u0308mu\u0308_26"
+  - first:
+      213: -6064771402182297012
+    second: "Animasyonlar tu\u0308mu\u0308_27"
+  - first:
+      213: 413174423208166948
+    second: "Animasyonlar tu\u0308mu\u0308_28"
+  - first:
+      213: 3741343166982900006
+    second: "Animasyonlar tu\u0308mu\u0308_29"
+  - first:
+      213: 5853519448823564961
+    second: "Animasyonlar tu\u0308mu\u0308_30"
+  - first:
+      213: 5412077821430492844
+    second: "Animasyonlar tu\u0308mu\u0308_31"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 199
+        width: 64
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be04f1f03e6e27b46b3a3499d4295b24
+      internalID: -4851641738400623375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_1"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdf221a4cb29c04ab2f4ae39d754297
+      internalID: -3094765844872736340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_2"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b352f4c973c19a5439fed46a05f4f798
+      internalID: -6201487867742842411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_3"
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 193
+        width: 64
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7afd5a634e234934180b499111c8a146
+      internalID: -1868936483560526040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_4"
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d286b8df8c2b446b31289865508d16
+      internalID: 8803572216598696369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_5"
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3cda56ab47936d428efe55df6a9c917
+      internalID: -4665449044939183995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_6"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc89b6033914dca478523ae1fde1b15b
+      internalID: -8658000990607563578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_7"
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11cbb03a9d4fa2844a8f5ea543b3bc91
+      internalID: 586140750406061105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_8"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c358a328acad3014aabe4de11b4e74f7
+      internalID: -6871267298296180824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_9"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad873a0c162a5ea41ac239cc301fd352
+      internalID: 6496869743041311151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_10"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483d1d24047878e41a4a5dfc2bf0875c
+      internalID: 1665027398157583005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_11"
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b202af45435f54985cf2d4246b1431
+      internalID: -6652158727062722801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_12"
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5d5205d085d4a4aba6cc714e26722c
+      internalID: -7996621651965686215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_13"
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de4615de744ac94298465324f2b418a
+      internalID: -4830891753615139845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_14"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19ec6d6279c5f34995bcca1b9cafb03
+      internalID: 7665404906674041352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_15"
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543ad2895f7a0d349a7e4cea078c025a
+      internalID: 1472107495429146373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_16"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca89c676307c14a4cad177293609e12c
+      internalID: -6683506182163555334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_17"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e734eeb7c085f5a47b082e5ab8b721ff
+      internalID: -3500996889853706911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_18"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0ec3e887a58fb418937d6909050122
+      internalID: 5882726824781971356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_19"
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db8fa19290b65f42906535f669030e6
+      internalID: 1876344173079002336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_20"
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f700535bf49884aa7f96f19f0a5e84
+      internalID: 2646107489622806988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_21"
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43515e51b09aa9842adbf1b5b0260888
+      internalID: -520366711831838924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_22"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9e4fa3142e1564da61202387dbdb3f
+      internalID: -8770435256994306974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_23"
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5303371d33185ba4dbcc68f869a18371
+      internalID: 7130816492875026737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_24"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43dcfde9eaf426a488699aa4a5ea6159
+      internalID: -2813118978850540214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_25"
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5064e29bc10c9a041903218725bba0a6
+      internalID: -1769963413516486305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_26"
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870be3c05d3084640ac3c26574d2316e
+      internalID: 7281263918386000776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_27"
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44272663249fa4438e472e9778d64af
+      internalID: -6064771402182297012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_28"
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504c116ef0e210341adb7d858e92f76c
+      internalID: 413174423208166948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_29"
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983c96ccd894879488f4ac2ef4e1e4a9
+      internalID: 3741343166982900006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_30"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebad3394827d76438d815274a81507a
+      internalID: 5853519448823564961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Animasyonlar tu\u0308mu\u0308_31"
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c876aa1909acc2542b50a5dcd30afad6
+      internalID: 5412077821430492844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1c637a35ea5aca14c8d659b2078f0aed
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      "Animasyonlar tu\u0308mu\u0308_0": -4851641738400623375
+      "Animasyonlar tu\u0308mu\u0308_1": -3094765844872736340
+      "Animasyonlar tu\u0308mu\u0308_10": 1665027398157583005
+      "Animasyonlar tu\u0308mu\u0308_11": -6652158727062722801
+      "Animasyonlar tu\u0308mu\u0308_12": -7996621651965686215
+      "Animasyonlar tu\u0308mu\u0308_13": -4830891753615139845
+      "Animasyonlar tu\u0308mu\u0308_14": 7665404906674041352
+      "Animasyonlar tu\u0308mu\u0308_15": 1472107495429146373
+      "Animasyonlar tu\u0308mu\u0308_16": -6683506182163555334
+      "Animasyonlar tu\u0308mu\u0308_17": -3500996889853706911
+      "Animasyonlar tu\u0308mu\u0308_18": 5882726824781971356
+      "Animasyonlar tu\u0308mu\u0308_19": 1876344173079002336
+      "Animasyonlar tu\u0308mu\u0308_2": -6201487867742842411
+      "Animasyonlar tu\u0308mu\u0308_20": 2646107489622806988
+      "Animasyonlar tu\u0308mu\u0308_21": -520366711831838924
+      "Animasyonlar tu\u0308mu\u0308_22": -8770435256994306974
+      "Animasyonlar tu\u0308mu\u0308_23": 7130816492875026737
+      "Animasyonlar tu\u0308mu\u0308_24": -2813118978850540214
+      "Animasyonlar tu\u0308mu\u0308_25": -1769963413516486305
+      "Animasyonlar tu\u0308mu\u0308_26": 7281263918386000776
+      "Animasyonlar tu\u0308mu\u0308_27": -6064771402182297012
+      "Animasyonlar tu\u0308mu\u0308_28": 413174423208166948
+      "Animasyonlar tu\u0308mu\u0308_29": 3741343166982900006
+      "Animasyonlar tu\u0308mu\u0308_3": -1868936483560526040
+      "Animasyonlar tu\u0308mu\u0308_30": 5853519448823564961
+      "Animasyonlar tu\u0308mu\u0308_31": 5412077821430492844
+      "Animasyonlar tu\u0308mu\u0308_4": 8803572216598696369
+      "Animasyonlar tu\u0308mu\u0308_5": -4665449044939183995
+      "Animasyonlar tu\u0308mu\u0308_6": -8658000990607563578
+      "Animasyonlar tu\u0308mu\u0308_7": 586140750406061105
+      "Animasyonlar tu\u0308mu\u0308_8": -6871267298296180824
+      "Animasyonlar tu\u0308mu\u0308_9": 6496869743041311151
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
