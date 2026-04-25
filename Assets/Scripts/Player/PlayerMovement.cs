@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDashing;
     private bool canDash = true;
+
     public Transform currentCheckpoint;
 
     void Start()
@@ -50,14 +51,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (animator == null)
             animator = GetComponent<Animator>();
-            
     }
 
     public void Respawn()
     {
-    transform.position = currentCheckpoint.position;
-    GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-
+        transform.position = currentCheckpoint.position;
+        GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
     }
 
     void Update()
