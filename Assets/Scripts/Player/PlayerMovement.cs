@@ -12,15 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float dashTime = 0.15f;
     public float dashCooldown = 0.6f;
 
-    [Header("Wall")]
-    public float wallSlideSpeed = 2f;
-    public float wallJumpForceX = 8f;
-    public float wallJumpForceY = 9f;
-    public float wallJumpTime = 0.2f;
-
     [Header("Checks")]
     public Transform groundCheck;
-    public Transform wallCheck;
     public float checkRadius = 0.2f;
     public LayerMask groundLayer;
 
@@ -29,25 +22,26 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private TrailRenderer trail;
 
     private float move;
     private float facingDirection = 1f;
 
     private bool isGrounded;
-    private bool isTouchingWall;
-    private bool isWallSliding;
-    private bool isWallJumping;
-
     private bool isDashing;
     private bool canDash = true;
 
     public Transform currentCheckpoint;
-
+    
     void Start()
     {
         currentCheckpoint = transform;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        trail = GetComponent<TrailRenderer>();
+
+        if (trail != null)
+            trail.emitting = false;
 
         if (animator == null)
             animator = GetComponent<Animator>();
@@ -56,32 +50,27 @@ public class PlayerMovement : MonoBehaviour
     public void Respawn()
     {
         transform.position = currentCheckpoint.position;
-        GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
     }
 
     void Update()
     {
         move = Input.GetAxisRaw("Horizontal");
 
-        CheckSurroundings();
+        CheckGround();
 
-        if (!isDashing && !isWallJumping)
+        if (!isDashing)
         {
             Move();
             Flip();
         }
 
-        WallSlide();
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            if (isWallSliding)
-                WallJump();
-            else if (isGrounded)
-                Jump();
+            Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && !isWallSliding)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
         }
@@ -99,49 +88,13 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     }
 
-    void WallSlide()
-    {
-        if (isTouchingWall && !isGrounded && move != 0)
-        {
-            isWallSliding = true;
-
-            if (rb.linearVelocity.y < -wallSlideSpeed)
-            {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, -wallSlideSpeed);
-            }
-        }
-        else
-        {
-            isWallSliding = false;
-        }
-    }
-
-    void WallJump()
-    {
-        isWallJumping = true;
-
-        float wallJumpDirection = -facingDirection;
-
-        rb.linearVelocity = new Vector2(
-            wallJumpDirection * wallJumpForceX,
-            wallJumpForceY
-        );
-
-        facingDirection = wallJumpDirection;
-        spriteRenderer.flipX = facingDirection < 0;
-
-        Invoke(nameof(StopWallJump), wallJumpTime);
-    }
-
-    void StopWallJump()
-    {
-        isWallJumping = false;
-    }
-
     IEnumerator Dash()
     {
         canDash = false;
         isDashing = true;
+
+        if (trail != null)
+            trail.emitting = true;
 
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
@@ -153,20 +106,17 @@ public class PlayerMovement : MonoBehaviour
         rb.gravityScale = originalGravity;
         isDashing = false;
 
+        if (trail != null)
+            trail.emitting = false;
+
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
 
-    void CheckSurroundings()
+    void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(
             groundCheck.position,
-            checkRadius,
-            groundLayer
-        );
-
-        isTouchingWall = Physics2D.OverlapCircle(
-            wallCheck.position,
             checkRadius,
             groundLayer
         );
@@ -194,15 +144,11 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetBool("IsJumping", !isGrounded);
         animator.SetBool("IsDashing", isDashing);
-        animator.SetBool("IsWallSliding", isWallSliding);
     }
 
     private void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
             Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
-
-        if (wallCheck != null)
-            Gizmos.DrawWireSphere(wallCheck.position, checkRadius);
     }
 }

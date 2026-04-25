@@ -37,7 +37,7 @@ public class ColorManager : MonoBehaviour
         // --- Game Jam Hızıyla Test İçin ---
         // Oyun başladıktan 2 saniye sonra otomatik solmayı başlatıyoruz.
         // Gerçek oyunda bunu çocuğun kaybolduğu tetikleyici (Trigger) anına bağlamalısınız.
-        Invoke("StartDesaturationSequence", 2.0f);
+        Invoke("StartDesaturationSequence", 1.0f);
     }
 
     // Bu methodu çocuğun kaybedildiği an (Cutscene bittiğinde veya Trigger'a değdiğinde) çağırmalısınız.

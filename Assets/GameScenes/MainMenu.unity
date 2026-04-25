@@ -421,7 +421,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1203143745}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: OpenCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -933,7 +933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   fadePanel: {fileID: 471809236}
   fadeSpeed: 2
-  gameSceneName: ForestScene
+  gameSceneName: IntroScene
   creditsSceneName: CreditsScene
 --- !u!4 &1203143746
 Transform:

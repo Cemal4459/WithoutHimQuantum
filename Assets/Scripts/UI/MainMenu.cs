@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public Image fadePanel;
     public float fadeSpeed = 2f;
 
-    public string gameSceneName = "ForestScene";
+    public string gameSceneName = "IntroScene";
     public string creditsSceneName = "CreditsScene";
 
     public void StartGame()
@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
 
     public void OpenCredits()
     {
-        StartCoroutine(FadeAndLoad(creditsSceneName));
+    StartCoroutine(FadeAndLoad("CreditsScene"));
     }
 
     IEnumerator FadeAndLoad(string sceneName)
