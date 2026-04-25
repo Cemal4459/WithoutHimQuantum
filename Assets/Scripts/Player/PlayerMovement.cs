@@ -201,11 +201,23 @@ public class PlayerMovement : MonoBehaviour
         {
             facingDirection = 1f;
             spriteRenderer.flipX = false;
+
+            // Karakter sağa bakıyorsa, WallCheck'i sağ tarafa al
+            if (wallCheck != null)
+            {
+                wallCheck.localPosition = new Vector3(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y, wallCheck.localPosition.z);
+            }
         }
         else if (move < 0)
         {
             facingDirection = -1f;
             spriteRenderer.flipX = true;
+
+            // Karakter sola bakıyorsa, WallCheck'i sol tarafa al (X eksenini eksi yap)
+            if (wallCheck != null)
+            {
+                wallCheck.localPosition = new Vector3(-Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y, wallCheck.localPosition.z);
+            }
         }
     }
 
