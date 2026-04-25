@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c2ad0fc61202e44468460bfaa0f5738a
+guid: 12a9a938756507d4aa8fe1443dd9d843
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6739279762272195747
-    second: Bridge final_0
+      213: -22347995226875591
+    second: Bridge orta 222_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +52,7 @@ TextureImporter:
   alignment: 9
   spritePivot: {x: 0.5, y: 0.609375}
   spritePixelsToUnits: 64
-  spriteBorder: {x: 0, y: 7, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bridge final_0
+      name: Bridge orta 222_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5b69cf23c44972a0800000000000000
-      internalID: -6739279762272195747
+      spriteID: 9395f03ed9a90bff0800000000000000
+      internalID: -22347995226875591
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bridge final_0: -6739279762272195747
+      Bridge orta 222_0: -22347995226875591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
