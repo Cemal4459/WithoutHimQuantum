@@ -8,12 +8,20 @@ public class MainMenu : MonoBehaviour
     public Image fadePanel;
     public float fadeSpeed = 2f;
 
+    public string gameSceneName = "ForestScene";
+    public string creditsSceneName = "CreditsScene";
+
     public void StartGame()
     {
-        StartCoroutine(FadeAndLoad());
+        StartCoroutine(FadeAndLoad(gameSceneName));
     }
 
-    IEnumerator FadeAndLoad()
+    public void OpenCredits()
+    {
+        StartCoroutine(FadeAndLoad(creditsSceneName));
+    }
+
+    IEnumerator FadeAndLoad(string sceneName)
     {
         Color color = fadePanel.color;
 
@@ -24,7 +32,7 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene("ForestScene");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()
