@@ -26,10 +26,11 @@ public class NPCDialogue : MonoBehaviour
     private bool isTyping = false;
     private Coroutine typingRoutine;
 
-    void Start()
-    {
+void Start()
+{
+    if (dialoguePanel != null)
         dialoguePanel.SetActive(false);
-    }
+}
 
     void Update()
     {
@@ -104,12 +105,21 @@ public class NPCDialogue : MonoBehaviour
             EndDialogue();
     }
 
-    void EndDialogue()
-    {
+void EndDialogue()
+{
+    if (typingRoutine != null)
+        StopCoroutine(typingRoutine);
+
+    if (dialoguePanel != null)
         dialoguePanel.SetActive(false);
+
+    if (dialogueText != null)
         dialogueText.text = "";
+
+    if (speakerText != null)
         speakerText.text = "";
-        playerInRange = false;
-        isTyping = false;
-    }
+
+    playerInRange = false;
+    isTyping = false;
+}
 }
