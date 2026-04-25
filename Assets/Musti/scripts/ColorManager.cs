@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using System.Collections; // Zamanlayıcı (Coroutine) kullanmak için bu kütüphane şart!
+using System.Collections;
 
 public class ColorManager : MonoBehaviour
 {
@@ -12,11 +12,13 @@ public class ColorManager : MonoBehaviour
     private ColorAdjustments colorAdjustments;
 
     [Header("Geçiş Ayarları")]
-    public float fadeDuration = 1.5f; // Rengin ne kadar sürede açılacağı (Saniye)
+    public float restoreDuration = 1.5f; // Eşya bulunca renklenme süresi
+    public float lostDuration = 1.0f;    // Girişte rengin yavaşça solma süresi (Daha uzun/sinematik)
 
-    // Dünyanın başlangıç ve hedef doygunluğu
-    private float currentSaturation = -100f;
-    private float targetSaturation = -100f;
+    [Header("Renk Açılma Seviyeleri")]
+    // Hedefler: -95, -85, -65, -35, 0 (Senin harika oranların)
+    public float[] saturationLevels = { -95f, -85f, -65f, -35f, 0f };
+    private int currentStep = 0;
 
     void Awake()
     {
@@ -28,53 +30,67 @@ public class ColorManager : MonoBehaviour
     {
         if (globalVolume.profile.TryGet(out colorAdjustments))
         {
-            colorAdjustments.saturation.value = currentSaturation;
+            // OYUN RENKLİ BAŞLIYOR!
+            colorAdjustments.saturation.value = 0f;
+        }
+
+        // --- Game Jam Hızıyla Test İçin ---
+        // Oyun başladıktan 2 saniye sonra otomatik solmayı başlatıyoruz.
+        // Gerçek oyunda bunu çocuğun kaybolduğu tetikleyici (Trigger) anına bağlamalısınız.
+        Invoke("StartDesaturationSequence", 2.0f);
+    }
+
+    // Bu methodu çocuğun kaybedildiği an (Cutscene bittiğinde veya Trigger'a değdiğinde) çağırmalısınız.
+    public void StartDesaturationSequence()
+    {
+        if (colorAdjustments != null)
+        {
+            Debug.Log("Umut kayboluyor... Dünya grileşiyor.");
+            // Hedefimiz zifiri siyah-beyaz (-100), Süremiz sinematik (4 saniye)
+            StartCoroutine(LerpColor(-100f, lostDuration));
         }
     }
 
-    // Eşya bulunduğunda bu tetiklenecek
+    // Eşya bulunduğunda bu tetiklenecek (Hızlı açılma)
     public void RestoreColor()
     {
-        // Yeni hedefi belirliyoruz (20 birim daha parlak)
-        targetSaturation += 20f;
-        targetSaturation = Mathf.Clamp(targetSaturation, -100f, 0f);
-
-        // Yumuşak geçiş animasyonunu başlatıyoruz
-        StartCoroutine(LerpColor(targetSaturation));
+        if (currentStep < saturationLevels.Length)
+        {
+            float targetSaturation = saturationLevels[currentStep];
+            // Hedefimiz Array'deki değer, Süremiz hızlı (1.5 saniye)
+            StartCoroutine(LerpColor(targetSaturation, restoreDuration));
+            currentStep++;
+        }
     }
 
-    // Zamanla rengi açan Coroutine (Sihrin gerçekleştiği yer)
-    private IEnumerator LerpColor(float targetValue)
+    // Artık bu tek zamanlayıcı hem solma hem açılma için kullanılıyor!
+    private IEnumerator LerpColor(float targetValue, float duration)
     {
         float elapsedTime = 0f;
         float startValue = colorAdjustments.saturation.value;
 
-        // fadeDuration (1.5 saniye) boyunca adım adım çalışacak döngü
-        while (elapsedTime < fadeDuration)
+        while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-
-            // Başlangıç değerinden hedef değere belirlenen sürede yumuşak geçiş (Lerp)
-            float newValue = Mathf.Lerp(startValue, targetValue, elapsedTime / fadeDuration);
+            float newValue = Mathf.Lerp(startValue, targetValue, elapsedTime / duration);
 
             if (colorAdjustments != null)
             {
                 colorAdjustments.saturation.value = newValue;
             }
 
-            yield return null; // Bir sonraki kareyi (frame) bekle ve döngüye devam et
+            yield return null;
         }
 
-        // Döngü bitince tam olarak hedef değere oturt (küsurat kalmasın)
         if (colorAdjustments != null)
         {
             colorAdjustments.saturation.value = targetValue;
         }
 
-        Debug.Log("Renk yumuşakça açıldı! Yeni Doygunluk Hedefi: " + targetValue);
+        Debug.Log($"Renk geçişi tamamlandı! Yeni Doygunluk: {targetValue}");
     }
 
-    // --- T Tuşu ile Test Kısmı (Cemal işini bitirene kadar durabilir) ---
+    // --- T Tuşu ile Test Kısmı ---
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
