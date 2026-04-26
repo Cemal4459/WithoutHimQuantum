@@ -96,4 +96,16 @@ public class MirrorLeverController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0f, 0f, targetAngle);
     }
+    public void ResetLeverToStart()
+{
+    Vector3 leftPos = leftHandle.position;
+    leftPos.y = minY;
+    leftHandle.position = leftPos;
+
+    Vector3 rightPos = rightHandle.position;
+    rightPos.y = maxY;
+    rightHandle.position = rightPos;
+
+    RotateMirrorInstant();
+}
 }

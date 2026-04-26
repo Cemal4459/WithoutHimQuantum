@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerDeathInDark : MonoBehaviour
 {
@@ -9,6 +8,16 @@ public class PlayerDeathInDark : MonoBehaviour
     private float darkTimer;
 
     public bool darkDeathActive = false;
+
+    private PlayerMovement playerMovement;
+    private Rigidbody2D rb;
+    public MirrorLeverController mirrorLeverController;
+
+    void Start()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
@@ -44,7 +53,24 @@ public class PlayerDeathInDark : MonoBehaviour
     }
 
     void Die()
+{
+    if (playerMovement != null && playerMovement.currentCheckpoint != null)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        transform.position = playerMovement.currentCheckpoint.position;
     }
+
+    if (rb != null)
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+    }
+
+    if (mirrorLeverController != null)
+    {
+        mirrorLeverController.ResetLeverToStart();
+    }
+
+    darkTimer = 0f;
+    isInSafeZone = false;
+}
 }
