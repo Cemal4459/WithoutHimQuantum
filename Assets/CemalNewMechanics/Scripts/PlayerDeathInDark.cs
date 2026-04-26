@@ -8,8 +8,16 @@ public class PlayerDeathInDark : MonoBehaviour
     private bool isInSafeZone;
     private float darkTimer;
 
+    public bool darkDeathActive = false;
+
     void Update()
     {
+        if (!darkDeathActive)
+        {
+            darkTimer = 0f;
+            return;
+        }
+
         if (isInSafeZone)
         {
             darkTimer = 0f;
@@ -27,6 +35,12 @@ public class PlayerDeathInDark : MonoBehaviour
     public void SetSafeZoneState(bool state)
     {
         isInSafeZone = state;
+    }
+
+    public void SetDarkDeathActive(bool state)
+    {
+        darkDeathActive = state;
+        darkTimer = 0f;
     }
 
     void Die()

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Sahne yenilemek için
 
 public class FallingTrap : MonoBehaviour
 {
@@ -12,7 +11,6 @@ public class FallingTrap : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Başlangıçta tag "Untagged" veya "Enemy" olabilir
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,26 +24,27 @@ public class FallingTrap : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 1. OYUNCUYA ÇARPMA DURUMU (Ölüm)
+        // Oyuncuya çarparsa checkpoint'e döndür
         if (collision.gameObject.CompareTag("Player") && !hasLanded)
         {
-            // Buraya kendi Checkpoint sistemini yazabilirsin. 
-            // Şimdilik en basitinden sahneyi baştan başlatıyoruz:
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerMovement player = collision.gameObject.GetComponentInParent<PlayerMovement>();
+
+            if (player != null)
+            {
+                player.Respawn();
+            }
+
             return;
         }
 
-        // 2. YERE ÇARPMA DURUMU (Zemine Dönüşme)
+        // Yere çarparsa zemin gibi davran
         if (collision.gameObject.CompareTag("Ground") && !hasLanded)
         {
             hasLanded = true;
-            rb.bodyType = RigidbodyType2D.Static; // Hareketini dondur
+            rb.bodyType = RigidbodyType2D.Static;
 
-            // KODLA TAG VE LAYER DEĞİŞTİRME
             gameObject.tag = "Ground";
             gameObject.layer = LayerMask.NameToLayer("Ground");
-
-            // Not: Unity'de "Ground" isminde bir Layer oluşturduğundan emin ol kanka.
         }
     }
 }

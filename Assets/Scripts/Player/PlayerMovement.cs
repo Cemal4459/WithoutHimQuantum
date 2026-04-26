@@ -59,11 +59,18 @@ public class PlayerMovement : MonoBehaviour
             animator = GetComponent<Animator>();
     }
 
-    public void Respawn()
+public void Respawn()
+{
+    transform.position = currentCheckpoint.position;
+    rb.linearVelocity = Vector2.zero;
+
+    BridgePiece[] bridges = FindObjectsByType<BridgePiece>(FindObjectsSortMode.None);
+
+    foreach (BridgePiece bridge in bridges)
     {
-        transform.position = currentCheckpoint.position;
-        rb.linearVelocity = Vector2.zero;
+        bridge.ResetBridge();
     }
+}
 
     void Update()
     {

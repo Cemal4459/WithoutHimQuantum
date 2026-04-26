@@ -5,9 +5,10 @@ public class MirrorLeverController : MonoBehaviour
     public Transform leftHandle;
     public Transform rightHandle;
 
-    public float minY = -0.7f;
-    public float maxY = 1.5f;
-    public float maxMirrorAngle = 60f;
+    public float minY = -1.75f;
+    public float maxY = 0.8f;
+
+    public float maxMirrorAngle = 62.5f;
     public float rotationSmooth = 10f;
 
     public float clickDistance = 1.2f;
@@ -15,18 +16,22 @@ public class MirrorLeverController : MonoBehaviour
     private Transform selectedHandle;
     private Camera cam;
 
-void Start()
-{
-    cam = Camera.main;
+    void Start()
+    {
+        cam = Camera.main;
 
-    Vector3 leftPos = leftHandle.position;
-    leftPos.y = maxY;
-    leftHandle.position = leftPos;
+        // Oyun başında ışık EN SAĞDA başlasın
+        // Sol kol aşağıda, sağ kol yukarıda
+        Vector3 leftPos = leftHandle.position;
+        leftPos.y = minY;
+        leftHandle.position = leftPos;
 
-    Vector3 rightPos = rightHandle.position;
-    rightPos.y = minY;
-    rightHandle.position = rightPos;
-}
+        Vector3 rightPos = rightHandle.position;
+        rightPos.y = maxY;
+        rightHandle.position = rightPos;
+
+        RotateMirrorInstant();
+    }
 
     void Update()
     {
@@ -41,18 +46,13 @@ void Start()
             float leftDistance = Vector2.Distance(mouseWorld, leftHandle.position);
             float rightDistance = Vector2.Distance(mouseWorld, rightHandle.position);
 
-            Debug.Log("Left Distance: " + leftDistance);
-            Debug.Log("Right Distance: " + rightDistance);
-
             if (leftDistance <= clickDistance)
             {
                 selectedHandle = leftHandle;
-                Debug.Log("LEFT HANDLE SELECTED");
             }
             else if (rightDistance <= clickDistance)
             {
                 selectedHandle = rightHandle;
-                Debug.Log("RIGHT HANDLE SELECTED");
             }
         }
 
@@ -68,10 +68,10 @@ void Start()
             selectedHandle.position = pos;
         }
 
-        RotateMirror();
+        RotateMirrorSmooth();
     }
 
-    void RotateMirror()
+    void RotateMirrorSmooth()
     {
         float difference = rightHandle.position.y - leftHandle.position.y;
         float range = maxY - minY;
@@ -81,8 +81,19 @@ void Start()
 
         transform.rotation = Quaternion.Lerp(
             transform.rotation,
-            Quaternion.Euler(0, 0, targetAngle),
+            Quaternion.Euler(0f, 0f, targetAngle),
             rotationSmooth * Time.deltaTime
         );
+    }
+
+    void RotateMirrorInstant()
+    {
+        float difference = rightHandle.position.y - leftHandle.position.y;
+        float range = maxY - minY;
+
+        float normalized = Mathf.Clamp(difference / range, -1f, 1f);
+        float targetAngle = normalized * maxMirrorAngle;
+
+        transform.rotation = Quaternion.Euler(0f, 0f, targetAngle);
     }
 }
