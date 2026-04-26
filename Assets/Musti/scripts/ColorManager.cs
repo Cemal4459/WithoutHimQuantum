@@ -7,95 +7,88 @@ public class ColorManager : MonoBehaviour
 {
     public static ColorManager instance;
 
-    [Header("Post Processing Ayarları")]
+    [Header("Post Processing")]
     public Volume globalVolume;
     private ColorAdjustments colorAdjustments;
 
-    [Header("Geçiş Ayarları")]
-    public float restoreDuration = 1.5f; // Eşya bulunca renklenme süresi
-    public float lostDuration = 1.0f;    // Girişte rengin yavaşça solma süresi (Daha uzun/sinematik)
+    [Header("Geçiş")]
+    public float restoreDuration = 1.5f;
 
-    [Header("Renk Açılma Seviyeleri")]
-    // Hedefler: -95, -85, -65, -35, 0 (Senin harika oranların)
-    public float[] saturationLevels = { -95f, -85f, -65f, -35f, 0f };
-    private int currentStep = 0;
+    [Header("Renk Seviyeleri")]
+    public float[] saturationLevels = { -100f, -85f, -65f, -35f, 0f };
+
+    private int collectedCount;
+    private Coroutine colorRoutine;
 
     void Awake()
     {
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
+        instance = this;
     }
 
     void Start()
     {
-        if (globalVolume.profile.TryGet(out colorAdjustments))
+        if (globalVolume != null && globalVolume.profile.TryGet(out colorAdjustments))
         {
-            // OYUN RENKLİ BAŞLIYOR!
-            colorAdjustments.saturation.value = 0f;
+            collectedCount = PlayerPrefs.GetInt("CollectedChildItems", 0);
+            collectedCount = Mathf.Clamp(collectedCount, 0, saturationLevels.Length - 1);
+
+            // Scene açıldığında kayıtlı seviyeden başla
+            colorAdjustments.saturation.value = saturationLevels[collectedCount];
+
+            Debug.Log("Scene başlangıç renk seviyesi: " + collectedCount);
         }
-
-        // --- Game Jam Hızıyla Test İçin ---
-        // Oyun başladıktan 2 saniye sonra otomatik solmayı başlatıyoruz.
-        // Gerçek oyunda bunu çocuğun kaybolduğu tetikleyici (Trigger) anına bağlamalısınız.
-        Invoke("StartDesaturationSequence", 1.0f);
-    }
-
-    // Bu methodu çocuğun kaybedildiği an (Cutscene bittiğinde veya Trigger'a değdiğinde) çağırmalısınız.
-    public void StartDesaturationSequence()
-    {
-        if (colorAdjustments != null)
+        else
         {
-            Debug.Log("Umut kayboluyor... Dünya grileşiyor.");
-            // Hedefimiz zifiri siyah-beyaz (-100), Süremiz sinematik (4 saniye)
-            StartCoroutine(LerpColor(-100f, lostDuration));
+            Debug.LogWarning("ColorManager: Global Volume veya Color Adjustments bulunamadı!");
         }
     }
 
-    // Eşya bulunduğunda bu tetiklenecek (Hızlı açılma)
     public void RestoreColor()
     {
-        if (currentStep < saturationLevels.Length)
-        {
-            float targetSaturation = saturationLevels[currentStep];
-            // Hedefimiz Array'deki değer, Süremiz hızlı (1.5 saniye)
-            StartCoroutine(LerpColor(targetSaturation, restoreDuration));
-            currentStep++;
-        }
+        if (colorAdjustments == null) return;
+
+        collectedCount++;
+        collectedCount = Mathf.Clamp(collectedCount, 0, saturationLevels.Length - 1);
+
+        PlayerPrefs.SetInt("CollectedChildItems", collectedCount);
+        PlayerPrefs.Save();
+
+        float targetSaturation = saturationLevels[collectedCount];
+
+        if (colorRoutine != null)
+            StopCoroutine(colorRoutine);
+
+        colorRoutine = StartCoroutine(LerpColor(targetSaturation, restoreDuration));
+
+        Debug.Log("Eşya toplandı. Yeni renk seviyesi: " + collectedCount);
     }
 
-    // Artık bu tek zamanlayıcı hem solma hem açılma için kullanılıyor!
     private IEnumerator LerpColor(float targetValue, float duration)
     {
-        float elapsedTime = 0f;
+        float elapsed = 0f;
         float startValue = colorAdjustments.saturation.value;
 
-        while (elapsedTime < duration)
+        while (elapsed < duration)
         {
-            elapsedTime += Time.deltaTime;
-            float newValue = Mathf.Lerp(startValue, targetValue, elapsedTime / duration);
-
-            if (colorAdjustments != null)
-            {
-                colorAdjustments.saturation.value = newValue;
-            }
-
+            elapsed += Time.deltaTime;
+            colorAdjustments.saturation.value = Mathf.Lerp(startValue, targetValue, elapsed / duration);
             yield return null;
         }
 
-        if (colorAdjustments != null)
-        {
-            colorAdjustments.saturation.value = targetValue;
-        }
-
-        Debug.Log($"Renk geçişi tamamlandı! Yeni Doygunluk: {targetValue}");
+        colorAdjustments.saturation.value = targetValue;
     }
 
-    // --- T Tuşu ile Test Kısmı ---
-    void Update()
+    [ContextMenu("Reset Trailer Color Progress")]
+    public void ResetProgress()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            RestoreColor();
-        }
+        PlayerPrefs.DeleteKey("CollectedChildItems");
+        PlayerPrefs.Save();
+
+        collectedCount = 0;
+
+        if (colorAdjustments != null)
+            colorAdjustments.saturation.value = saturationLevels[0];
+
+        Debug.Log("Renk progress sıfırlandı.");
     }
 }
