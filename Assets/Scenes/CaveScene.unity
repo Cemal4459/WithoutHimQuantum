@@ -5405,7 +5405,7 @@ GameObject:
   - component: {fileID: 179694745}
   - component: {fileID: 179694744}
   m_Layer: 0
-  m_Name: SacuraEntrance
+  m_Name: VicoryEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
