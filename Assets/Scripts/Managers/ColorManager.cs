@@ -19,29 +19,32 @@ public class ColorManager : MonoBehaviour
 
     private int collectedCount;
     private Coroutine colorRoutine;
+    [Header("Scene Start")]
+public bool resetProgressOnThisScene = false;
 
     void Awake()
     {
         instance = this;
     }
 
-    void Start()
+void Start()
+{
+    if (resetProgressOnThisScene)
     {
-        if (globalVolume != null && globalVolume.profile.TryGet(out colorAdjustments))
-        {
-            collectedCount = PlayerPrefs.GetInt("CollectedChildItems", 0);
-            collectedCount = Mathf.Clamp(collectedCount, 0, saturationLevels.Length - 1);
-
-            // Scene açıldığında kayıtlı seviyeden başla
-            colorAdjustments.saturation.value = saturationLevels[collectedCount];
-
-            Debug.Log("Scene başlangıç renk seviyesi: " + collectedCount);
-        }
-        else
-        {
-            Debug.LogWarning("ColorManager: Global Volume veya Color Adjustments bulunamadı!");
-        }
+        PlayerPrefs.DeleteKey("CollectedChildItems");
+        PlayerPrefs.Save();
     }
+
+    if (globalVolume != null && globalVolume.profile.TryGet(out colorAdjustments))
+    {
+        collectedCount = PlayerPrefs.GetInt("CollectedChildItems", 0);
+        collectedCount = Mathf.Clamp(collectedCount, 0, saturationLevels.Length - 1);
+
+        colorAdjustments.saturation.value = saturationLevels[collectedCount];
+
+        Debug.Log("Scene başlangıç renk seviyesi: " + collectedCount);
+    }
+}
 
     public void RestoreColor()
     {
