@@ -4,19 +4,23 @@ public class DeathZone : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Debug logların aynen kalabilir, hatayı çözmede yardımcı olur
         Debug.Log("DeathZone'a giren obje: " + collision.name);
-        Debug.Log("Tag: " + collision.tag);
 
-        PlayerMovement player = collision.GetComponent<PlayerMovement>();
-        Debug.Log("Aynı objede PlayerMovement var mı: " + (player != null));
+        // Child objeden tetiklendiği için parent objedeki PlayerHealth script'ini arıyoruz
+        PlayerHealth playerHealth = collision.GetComponentInParent<PlayerHealth>();
+        
+        Debug.Log("Parent'ta PlayerHealth var mı: " + (playerHealth != null));
 
-        PlayerMovement parentPlayer = collision.GetComponentInParent<PlayerMovement>();
-        Debug.Log("Parent'ta PlayerMovement var mı: " + (parentPlayer != null));
-
-        if (parentPlayer != null)
+        if (playerHealth != null)
         {
-            parentPlayer.Respawn();
-            Debug.Log("Respawn çalıştı.");
+            // Karakteri doğrudan ışınlamak yerine önce hasar sistemini çalıştırıyoruz
+            playerHealth.TakeDamage();
+            Debug.Log("PlayerHealth tetiklendi, hasar verildi.");
+        }
+        else
+        {
+            Debug.LogWarning("DeathZone'a bir şey girdi ama üzerinde PlayerHealth bulunamadı!");
         }
     }
 }

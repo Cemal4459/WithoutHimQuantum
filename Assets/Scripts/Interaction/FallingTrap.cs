@@ -24,14 +24,26 @@ public class FallingTrap : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Oyuncuya çarparsa checkpoint'e döndür
+        // Oyuncuya çarparsa canını azalt ve checkpoint'e döndür
         if (collision.gameObject.CompareTag("Player") && !hasLanded)
         {
-            PlayerMovement player = collision.gameObject.GetComponentInParent<PlayerMovement>();
+            // Karakterin parent objesindeki PlayerHealth script'ini arıyoruz
+            PlayerHealth playerHealth = collision.gameObject.GetComponentInParent<PlayerHealth>();
 
-            if (player != null)
+            if (playerHealth != null)
             {
-                player.Respawn();
+                // Canı azaltır, kalbi siler ve ölmediyse Respawn() fonksiyonunu tetikler
+                playerHealth.TakeDamage(); 
+                Debug.Log("Sarkıç karaktere vurdu, can azaltıldı.");
+            }
+            else
+            {
+                // Eğer sahbede PlayerHealth yoksa oyunun çökmemesi için eski sisteme yedek dönüş
+                PlayerMovement player = collision.gameObject.GetComponentInParent<PlayerMovement>();
+                if (player != null)
+                {
+                    player.Respawn();
+                }
             }
 
             return;
