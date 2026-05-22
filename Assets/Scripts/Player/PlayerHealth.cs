@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Sahne yüklemek için
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,63 +7,73 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
 
     [Header("UI Elements")]
-    public GameObject[] heartImages; // Hierarchy'deki 3 kalp objesini buraya atayacağız
+    public GameObject[] heartImages; 
+    public GameObject inGameMenuPanel; // Yeni ekledik: Açılacak olan menü paneli
 
     private PlayerMovement playerMovement;
+    private bool isGameOver = false;
 
     void Start()
     {
         currentHealth = maxHealth;
-        
-        // Karakterin üzerindeki hareket koduna referans alıyoruz
         playerMovement = GetComponent<PlayerMovement>();
+        
+        // Oyun başında panelin kapalı olduğundan emin olalım
+        if (inGameMenuPanel != null) inGameMenuPanel.SetActive(false);
         
         UpdateHeartUI();
     }
 
-    // DeathZone bu fonksiyonu çağıracak
+    void Update()
+    {
+        // Oyuncu ölmediyse ve ESC tuşuna basarsa menüyü aç/kapat
+        if (!isGameOver && Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToggleMenu();
+        }
+    }
+
     public void TakeDamage()
     {
-        currentHealth--; // Canı 1 azalt
+        if (isGameOver) return;
+
+        currentHealth--; 
         UpdateHeartUI();
 
         if (currentHealth <= 0)
         {
-            RestartGame();
+            GameOver();
         }
         else
         {
-            // Eğer can varsa, PlayerMovement içindeki eski Respawn mantığını çalıştır
-            if (playerMovement != null)
-            {
-                playerMovement.Respawn();
-            }
-            else
-            {
-                Debug.LogError("PlayerMovement script'i bulunamadı! Karakter ışınlanamıyor.");
-            }
+            if (playerMovement != null) playerMovement.Respawn();
         }
     }
 
-    // Kalp görsellerini ekranda açıp kapatan fonksiyon
+    // ESC tuşuna basıldığında oyunu durdurup menüyü açan fonksiyon
+    void ToggleMenu()
+    {
+        bool isActive = inGameMenuPanel.activeSelf;
+        inGameMenuPanel.SetActive(!isActive);
+
+        // Eğer menü açıldıysa zamanı durdur (0), kapandıysa normal hıza al (1)
+        Time.timeScale = isActive ? 1f : 0f;
+    }
+
+    // Canlar tamamen bittiğinde çalışacak fonksiyon
+    void GameOver()
+    {
+        isGameOver = true;
+        inGameMenuPanel.SetActive(true); // Paneli aç
+        Time.timeScale = 0f; // Oyunu dondur
+    }
+
     void UpdateHeartUI()
     {
         for (int i = 0; i < heartImages.Length; i++)
         {
-            if (i < currentHealth)
-            {
-                heartImages[i].SetActive(true); // Can varsa göster
-            }
-            else
-            {
-                heartImages[i].SetActive(false); // Can gitmişse gizle
-            }
+            if (i < currentHealth) heartImages[i].SetActive(true);
+            else heartImages[i].SetActive(false);
         }
-    }
-
-    // Can tamamen bittiğinde sahneyi en baştan yükler
-    void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
